@@ -8,7 +8,7 @@ var TaskViewModel = function(title, description) {
     });
 };
 
-function AppViewModel() {
+var AppViewModel = function() {
     var self = this;
 
     self.taskList = ko.observableArray([]);
