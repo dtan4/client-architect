@@ -20,7 +20,11 @@ function AppViewModel() {
 
         self.taskList.push(task);
     };
+
+    self.removeTask = function() {
+        self.taskList.remove(this);
+    };
 }
 
-// ModelView を Model にバインディング
+// AppViewModel を Model にバインディング
 ko.applyBindings(new AppViewModel());

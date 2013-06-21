@@ -9,9 +9,10 @@
     <table border="1" data-bind="visible: taskList().length > 0">
       <thead>
         <tr>
-          <th></th>
+          <th>complete</th>
           <th>title</th>
           <th>description</th>
+          <th>remove</th>
         </tr>
       </thead>
       <tbody data-bind="foreach: taskList">
@@ -19,6 +20,7 @@
           <td><input type="checkbox" data-bind="checked: complete" /></td>
           <td data-bind="text: title"></td>
           <td data-bind="text: description"></td>
+          <td><button data-bind="click: $parent.removeTask">Remove</button></td>
         </tr>
       </tbody>
     </table>
