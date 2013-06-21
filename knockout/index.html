@@ -5,7 +5,32 @@
     <title>Knockout.js</title>
   </head>
   <body>
-    <h1>hehe</h1>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th></th>
+          <th>title</th>
+          <th>description</th>
+        </tr>
+      </thead>
+      <tbody data-bind="foreach: taskList">
+        <tr>
+          <td><input type="checkbox" data-bind="checked: complete" /></td>
+          <td data-bind="text: title"></td>
+          <td data-bind="text: description"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul>
+      <li><input type="text" id="taskTitle" /></li>
+      <li><input type="text" id="taskDescription" /></li>
+    </ul>
+    <button data-bind="click: addTask">Add</button>
+
     <script type="text/javascript" src="../common/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="knockout-2.2.1.js"></script>
+    <script type="text/javascript" src="todo.js"></script>
   </body>
 </html>
