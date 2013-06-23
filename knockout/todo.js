@@ -1,6 +1,6 @@
-var TaskViewModel = function(title, description) {
-    this.title = ko.observable(title);
-    this.description = ko.observable(description);
+var TaskModel = function(title, description) {
+    this.title = title
+    this.description = description
     this.complete = ko.observable(false);
 
     this.complete.subscribe(function(newVal) {
@@ -16,7 +16,7 @@ var AppViewModel = function() {
     self.addTask = function() {
         var title = $('#taskTitle').val();
         var description = $('#taskDescription').val();
-        var task = new TaskViewModel(title, description);
+        var task = new TaskModel(title, description);
 
         self.taskList.push(task);
     };
