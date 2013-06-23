@@ -1,9 +1,7 @@
-// Model (task)
-var TaskModel = function(title, description) {
-    this.title = title
-    this.description = description
+var Task = function(title, description) {
+    this.title = title;
+    this.description = description;
     this.complete = ko.observable(false);
-
 };
 
 // ViewModel
@@ -20,7 +18,7 @@ var AppViewModel = function() {
         }
 
         self.taskList.unshift(
-            new TaskModel(self.inputTitle(), self.inputDescription()));
+            new Task(self.inputTitle(), self.inputDescription()));
     };
 
     self.removeTask = function(task, e) {

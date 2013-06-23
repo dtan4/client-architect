@@ -5,6 +5,8 @@
     <title>Knockout.js</title>
   </head>
   <body>
+    <h1>Knockout.js ToDo</h1>
+
     <table border="1" data-bind="visible: taskList().length > 0">
       <thead>
         <tr>
@@ -16,7 +18,7 @@
       </thead>
       <tbody data-bind="foreach: taskList">
         <tr>
-          <td><input type="checkbox" data-bind="checked: complete" /></td>
+          <td><input type="checkbox" data-bind="checked: complete" /><span data-bind="visible: complete">Complete</span></td>
           <td data-bind="text: title"></td>
           <td data-bind="text: description"></td>
           <td><button data-bind="click: $parent.removeTask">Remove</button></td>
@@ -25,8 +27,8 @@
     </table>
 
     <ul>
-      <li><input type="text" data-bind="value: inputTitle" /></li>
-      <li><input type="text" data-bind="value: inputDescription" /></li>
+      <li><label>title: </label><input type="text" data-bind="value: inputTitle" /></li>
+      <li><label>description: </label><input type="text" data-bind="value: inputDescription" /></li>
     </ul>
     <button data-bind="click: addTask">Add</button>
 
