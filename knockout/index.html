@@ -5,7 +5,6 @@
     <title>Knockout.js</title>
   </head>
   <body>
-
     <table border="1" data-bind="visible: taskList().length > 0">
       <thead>
         <tr>
@@ -26,8 +25,8 @@
     </table>
 
     <ul>
-      <li><input type="text" id="taskTitle" /></li>
-      <li><input type="text" id="taskDescription" /></li>
+      <li><input type="text" data-bind="value: inputTitle" /></li>
+      <li><input type="text" data-bind="value: inputDescription" /></li>
     </ul>
     <button data-bind="click: addTask">Add</button>
 

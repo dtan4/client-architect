@@ -1,30 +1,32 @@
+// Model (task)
 var TaskModel = function(title, description) {
     this.title = title
     this.description = description
     this.complete = ko.observable(false);
 
-    this.complete.subscribe(function(newVal) {
-        console.log(title + ': ' + newVal);
-    });
 };
 
+// ViewModel
 var AppViewModel = function() {
     var self = this;
 
     self.taskList = ko.observableArray([]);
+    self.inputTitle = ko.observable('');
+    self.inputDescription = ko.observable('');
 
     self.addTask = function() {
-        var title = $('#taskTitle').val();
-        var description = $('#taskDescription').val();
-        var task = new TaskModel(title, description);
+        if (!self.inputTitle()) {
+            return;
+        }
 
-        self.taskList.push(task);
+        self.taskList.unshift(
+            new TaskModel(self.inputTitle(), self.inputDescription()));
     };
 
-    self.removeTask = function() {
-        self.taskList.remove(this);
+    self.removeTask = function(task, e) {
+        self.taskList.remove(task);
     };
 }
 
-// AppViewModel を Model にバインディング
+// AppViewModel を View にバインディング
 ko.applyBindings(new AppViewModel());
