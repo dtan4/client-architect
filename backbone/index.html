@@ -5,7 +5,33 @@
     <title>Backbone.js</title>
   </head>
   <body>
-    <h1>hehe</h1>
+    <h1>Backbone.js Todo</h1>
+
+    <div id="app">
+      <table border="1" id="taskTable">
+        <thead>
+          <tr>
+            <th>complete</th>
+            <th>title</th>
+            <th>description</th>
+            <th>remove</th>
+          </tr>
+        </thead>
+        <tbody id="taskList">
+        </tbody>
+      </table>
+
+      <ul>
+        <li><label>title: </label><input type="text" id="taskTitle" /></li>
+        <li><label>description: </label><input type="text" id="taskDescription" /></li>
+      </ul>
+      <button id="addBtn">Add</button>
+
+    </div>
+
     <script type="text/javascript" src="../common/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="underscore-min.js"></script>
+    <script type="text/javascript" src="backbone-min.js"></script>
+    <script type="text/javascript" src="todo.js"></script>
   </body>
 </html>
