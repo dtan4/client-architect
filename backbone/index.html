@@ -5,8 +5,10 @@
     <title>Backbone.js</title>
   </head>
   <body>
+    <h1>Backbone.js Todo</h1>
+
     <div id="app">
-      <table border="1">
+      <table border="1" id="taskTable">
         <thead>
           <tr>
             <th>complete</th>
@@ -20,8 +22,8 @@
       </table>
 
       <ul>
-        <li><input type="text" id="taskTitle" /></li>
-        <li><input type="text" id="taskDescription" /></li>
+        <li><label>title: </label><input type="text" id="taskTitle" /></li>
+        <li><label>description: </label><input type="text" id="taskDescription" /></li>
       </ul>
       <button id="addBtn">Add</button>
 
