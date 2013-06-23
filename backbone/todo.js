@@ -37,7 +37,7 @@ View.TaskView = Backbone.View.extend({
             .attr('class', 'completeChk');
         var span = $('<span>')
             .attr('class', 'completeMsg')
-            .text('Completed');
+            .text('Complete');
         span.hide();
 
         if (task.get('complete')) {
